@@ -15,11 +15,14 @@ export default function App() {
   const [isUpsellOpen, setIsUpsellOpen] = useState(false);
 
   const scrollToPlans = () => {
-    const plansEl = document.getElementById('planos');
-    if (plansEl) {
-      const topPos = plansEl.getBoundingClientRect().top + window.pageYOffset;
+    const titleEl = document.getElementById('planos-title') || document.getElementById('planos');
+    if (titleEl) {
+      const rect = titleEl.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      // Para exatamente 60px antes do texto "Escolha seu plano"
+      const targetY = rect.top + scrollTop - 60;
       window.scrollTo({
-        top: Math.max(0, topPos - 10),
+        top: Math.max(0, targetY),
         behavior: 'smooth',
       });
     }

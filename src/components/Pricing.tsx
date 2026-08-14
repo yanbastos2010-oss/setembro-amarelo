@@ -31,7 +31,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-14">
           <h2 
             id="planos-title"
-            className="text-[#1F2937] font-[700] text-[26px] sm:text-[30px] md:text-[36px] leading-tight"
+            className="text-[#1F2937] font-[700] text-[26px] sm:text-[30px] md:text-[36px] leading-tight scroll-mt-6 sm:scroll-mt-8"
           >
             Escolha seu plano
           </h2>

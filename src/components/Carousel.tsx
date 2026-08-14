@@ -54,7 +54,7 @@ export const Carousel: React.FC = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 width="768"
                 height="432"
