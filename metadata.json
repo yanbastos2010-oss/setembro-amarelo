@@ -1,0 +1,7 @@
+{
+  "name": "Modelos de Lembrancinhas - Setembro Amarelo",
+  "description": "Landing page para mais de 200 modelos de lembrancinhas prontas para imprimir para o Setembro Amarelo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
