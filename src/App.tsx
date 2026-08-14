@@ -15,10 +15,13 @@ export default function App() {
   const [isUpsellOpen, setIsUpsellOpen] = useState(false);
 
   const scrollToPlans = () => {
-    const titleEl = document.getElementById('planos-title') || document.getElementById('planos');
-    if (titleEl) {
-      // scrollIntoView respeita nativamente o scroll-margin-top (scroll-mt-8) em todos os navegadores mobile e desktop
-      titleEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const plansEl = document.getElementById('planos');
+    if (plansEl) {
+      const topPos = plansEl.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: Math.max(0, topPos - 10),
+        behavior: 'smooth',
+      });
     }
   };
 

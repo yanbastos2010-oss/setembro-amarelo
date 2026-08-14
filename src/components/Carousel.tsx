@@ -49,7 +49,7 @@ export const Carousel: React.FC = () => {
             <div 
               key={image.id}
               id={`modelo-card-${index + 1}`}
-              className="w-full flex justify-center bg-gray-50/50 rounded-2xl sm:rounded-3xl"
+              className="w-full max-w-3xl flex justify-center bg-gray-50/50 rounded-2xl sm:rounded-3xl aspect-[16/9] overflow-hidden"
             >
               <img
                 src={image.src}
@@ -65,7 +65,7 @@ export const Carousel: React.FC = () => {
                     e.currentTarget.src = image.fallbackSrc;
                   }
                 }}
-                className="w-full max-w-3xl h-auto object-contain rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100 pointer-events-none select-none"
+                className="w-full h-full object-cover rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100 pointer-events-none select-none"
                 draggable={false}
               />
             </div>

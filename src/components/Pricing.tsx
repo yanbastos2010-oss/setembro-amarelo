@@ -24,14 +24,14 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
   ];
 
   return (
-    <section id="planos" className="py-12 sm:py-16 md:py-24 bg-white scroll-mt-4">
+    <section id="planos" className="py-12 sm:py-16 md:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Título Centralizado */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-14">
           <h2 
             id="planos-title"
-            className="text-[#1F2937] font-[700] text-[26px] sm:text-[30px] md:text-[36px] leading-tight scroll-mt-8"
+            className="text-[#1F2937] font-[700] text-[26px] sm:text-[30px] md:text-[36px] leading-tight"
           >
             Escolha seu plano
           </h2>
