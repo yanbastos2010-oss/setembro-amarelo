@@ -15,16 +15,10 @@ export default function App() {
   const [isUpsellOpen, setIsUpsellOpen] = useState(false);
 
   const scrollToPlans = () => {
-    const titleEl = document.getElementById('planos-title');
-    const plansEl = document.getElementById('planos');
-    const target = titleEl || plansEl;
-    if (target) {
-      // Offset de 16px no mobile e 24px no desktop para deixar o título no topo exato
-      const isMobile = window.innerWidth < 640;
-      const yOffset = isMobile ? -16 : -24;
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const targetY = target.getBoundingClientRect().top + scrollTop + yOffset;
-      window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+    const titleEl = document.getElementById('planos-title') || document.getElementById('planos');
+    if (titleEl) {
+      // scrollIntoView respeita nativamente o scroll-margin-top (scroll-mt-8) em todos os navegadores mobile e desktop
+      titleEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
