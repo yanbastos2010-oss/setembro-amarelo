@@ -17,7 +17,7 @@ export default function App() {
   const scrollToPlans = () => {
     const plansEl = document.getElementById('planos');
     if (plansEl) {
-      plansEl.scrollIntoView({ behavior: 'smooth' });
+      plansEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
