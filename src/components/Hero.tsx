@@ -49,14 +49,18 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToPlans }) => {
 
         {/* Botão verde QUERO AGORA! */}
         <div className="w-full sm:w-auto">
-          <button
+          <a
             id="hero-cta-button"
-            onClick={onScrollToPlans}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4.5 sm:py-5 bg-[#16A34A] hover:bg-[#15803d] active:scale-[0.98] text-white font-[700] text-lg sm:text-xl rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer border border-[#16A34A]"
+            href="#planos-title"
+            onClick={(e) => {
+              e.preventDefault();
+              onScrollToPlans();
+            }}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4.5 sm:py-5 bg-[#16A34A] hover:bg-[#15803d] active:scale-[0.98] text-white font-[700] text-lg sm:text-xl rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer border border-[#16A34A] text-center"
           >
             <span>QUERO AGORA!</span>
             <ArrowDown className="w-5 h-5" />
-          </button>
+          </a>
         </div>
 
       </div>

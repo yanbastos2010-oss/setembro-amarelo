@@ -1,11 +1,12 @@
 import React from 'react';
 import { X, Check, Gift } from 'lucide-react';
+import { CHECKOUT_URLS } from '../config/checkout';
 
 interface UpsellModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onAcceptUpsell: () => void;
-  onDeclineUpsell: () => void;
+  onAcceptUpsell?: () => void;
+  onDeclineUpsell?: () => void;
 }
 
 export const UpsellModal: React.FC<UpsellModalProps> = ({
@@ -69,20 +70,22 @@ export const UpsellModal: React.FC<UpsellModalProps> = ({
         </div>
 
         {/* Botão Verde Principal */}
-        <button
+        <a
+          href={CHECKOUT_URLS.SPECIAL_19_90}
           onClick={onAcceptUpsell}
-          className="w-full py-4 px-4 bg-[#16A34A] hover:bg-[#15803d] active:scale-[0.98] text-white font-[700] text-sm sm:text-base rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg text-center border border-[#16A34A] mb-2.5 leading-tight uppercase tracking-wide"
+          className="w-full py-4 px-4 bg-[#16A34A] hover:bg-[#15803d] active:scale-[0.98] text-white font-[700] text-sm sm:text-base rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg text-center border border-[#16A34A] mb-2.5 leading-tight uppercase tracking-wide block"
         >
           SIM, QUERO O PLANO COMPLETO!
-        </button>
+        </a>
 
         {/* Card Visível para Recusar / Continuar com o Básico */}
-        <button
+        <a
+          href={CHECKOUT_URLS.BASIC_10}
           onClick={onDeclineUpsell}
-          className="w-full py-3 px-4 bg-gray-50/80 hover:bg-gray-100 active:scale-[0.98] text-[#4B5563] hover:text-[#1F2937] font-[500] text-xs sm:text-sm rounded-xl transition-all cursor-pointer border border-[#E5E7EB] hover:border-gray-300 text-center"
+          className="w-full py-3 px-4 bg-gray-50/80 hover:bg-gray-100 active:scale-[0.98] text-[#4B5563] hover:text-[#1F2937] font-[500] text-xs sm:text-sm rounded-xl transition-all cursor-pointer border border-[#E5E7EB] hover:border-gray-300 text-center block"
         >
           Não, prefiro continuar com o Plano Básico
-        </button>
+        </a>
       </div>
     </div>
   );

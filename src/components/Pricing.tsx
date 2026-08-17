@@ -1,11 +1,12 @@
 import React from 'react';
 import { Check, X, Gift } from 'lucide-react';
+import { CHECKOUT_URLS } from '../config/checkout';
 
 interface PricingProps {
-  onSelectPlan: (planName: string) => void;
+  onSelectPlan?: (planName: string) => void;
 }
 
-export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
+export const Pricing: React.FC<PricingProps> = () => {
   const basicItems = [
     { text: '+200 Modelos de Lembrancinhas para o Setembro Amarelo', included: true },
     { text: 'Acesso digital e vitalício', included: true },
@@ -83,13 +84,13 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
               </ul>
             </div>
 
-            <button
+            <a
               id="btn-plano-basico"
-              onClick={() => onSelectPlan('Plano Básico')}
-              className="w-full py-4 px-6 bg-white hover:bg-[#FFF9DB] active:scale-[0.98] text-[#1F2937] border-2 border-[#F5C518] font-[700] text-base rounded-xl transition-all cursor-pointer shadow-xs hover:shadow text-center"
+              href={CHECKOUT_URLS.BASIC_10}
+              className="w-full py-4 px-6 bg-white hover:bg-[#FFF9DB] active:scale-[0.98] text-[#1F2937] border-2 border-[#F5C518] font-[700] text-base rounded-xl transition-all cursor-pointer shadow-xs hover:shadow text-center block"
             >
               QUERO O PLANO BÁSICO
-            </button>
+            </a>
           </div>
 
           {/* Plano Completo */}
@@ -139,13 +140,13 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
               </ul>
             </div>
 
-            <button
+            <a
               id="btn-plano-completo"
-              onClick={() => onSelectPlan('Plano Completo')}
-              className="w-full py-4 px-6 bg-[#16A34A] hover:bg-[#15803d] active:scale-[0.98] text-white font-[700] text-base rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg text-center border border-[#16A34A]"
+              href={CHECKOUT_URLS.COMPLETE_27}
+              className="w-full py-4 px-6 bg-[#16A34A] hover:bg-[#15803d] active:scale-[0.98] text-white font-[700] text-base rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg text-center border border-[#16A34A] block"
             >
               QUERO O PLANO COMPLETO
-            </button>
+            </a>
           </div>
 
         </div>
